@@ -40,10 +40,6 @@ class wsus_client (
     purge_values => $purge_values
   }
 
-  service{ 'wuauserv':
-    enable => true,
-  }
-
   Registry_value{ require => Registry_key[$_basekey], notify => Service['wuauserv'] }
 
 
